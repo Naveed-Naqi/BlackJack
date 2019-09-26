@@ -1,25 +1,27 @@
 #include "Hand.hpp"
 #include "Deck.hpp"
 #include "Game.hpp"
-#include <iostream>
-#include <chrono>
-#include <thread>
+
 
 int main()
 {
-    using namespace std::chrono;
-    std::cout << "Hello waiter\n" << std::flush;
-    auto start = std::chrono::high_resolution_clock::now();
-    std::this_thread;
-    auto end = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double, std::milli> elapsed = end-start;
-    std::cout << "Waited " << elapsed.count() << " ms\n";
-}
+   bool replay = true;
+   std::string player_reponse = "";
 
-/*
-int main()
-{
    Game Blackjack;
-   Blackjack.startGame();
+
+   while(replay)
+   {
+       replay = false;
+       Blackjack.startGame();
+
+       std::cout << "Enter 'R' if you would like to replay (not case sensitive)" << std::endl;
+
+       std::cin >> player_reponse;
+
+       if(Blackjack.changeToUpperCase(player_reponse) == "R")
+       {
+           replay = true;
+       }
+   }
 }
-*/

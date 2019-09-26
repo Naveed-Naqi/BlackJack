@@ -14,8 +14,7 @@ public:
     Card operator[](size_t index) const;
     int size();
 
-    bool containsAce() const;
-    void flipAceVal(); 
+    void flipAceVal(int index); 
 private:
     int sum_;
     std::vector<Card> cards_in_hand_;

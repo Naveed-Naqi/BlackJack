@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.cpp": "cpp",
         "*.tcc": "cpp",
         "type_traits": "cpp",
         "iostream": "cpp",
@@ -44,6 +45,9 @@
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp",
-        "thread": "cpp"
+        "thread": "cpp",
+        "complex": "cpp",
+        "optional": "cpp",
+        "string_view": "cpp"
     }
 }

@@ -1,7 +1,9 @@
 #include "Deck.hpp"
+
 #include <algorithm>
 #include <chrono>
 #include <random>
+#include <iterator>
 
 Deck::Deck()
 {
@@ -36,8 +38,10 @@ Deck::Deck()
 
 void Deck::shuffle()
 {
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-    std::shuffle(deck_.begin(), deck_.end(), std::default_random_engine(seed));
+    std::random_device rd;
+    std::mt19937 g(rd());
+ 
+    std::shuffle(deck_.begin(), deck_.end(), g);
 }
 
 Card Deck::operator[](size_t index)

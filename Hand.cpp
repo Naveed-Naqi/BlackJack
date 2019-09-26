@@ -20,32 +20,14 @@ int Hand::size()
     return cards_in_hand_.size();
 }
 
-
-bool Hand::containsAce() const
+void Hand::flipAceVal(int index)
 {
-    for(Card card : cards_in_hand_)
+    if (cards_in_hand_[index].getValue() == 1)
     {
-        if (card.getValue() == 1 || card.getValue() == 11)
-        {
-            return true;
-        }
+        cards_in_hand_[index].setValue(11);
     }
-
-    return false;
-}
-
-void Hand::flipAceVal()
-{
-    for(Card card : cards_in_hand_)
+    else
     {
-        if (card.getValue() == 1)
-        {
-            card.setValue(11);
-        }
-        else
-        {
-            card.setValue(1);
-        }
-    }
-        
+        cards_in_hand_[index].setValue(1);
+    }     
 }

@@ -14,5 +14,12 @@ void Card::setValue(int value) { value_ = value; }
 
 void Card::printCard() const
 {
-    std::cout << value_ << " of " << suit_ << "\t";
+    if(value_ == 1 || value_ == 11) 
+    {
+       std::cout << " Ace of " << suit_ << "\t"; 
+    }
+    else
+    {
+        std::cout << value_ << " of " << suit_ << "\t";   
+    }
 }
